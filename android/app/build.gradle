@@ -1,0 +1,55 @@
+plugins {
+    id "com.android.application"
+    id 'org.jetbrains.kotlin.android'
+    id "dev.flutter.flutter-gradle-plugin"
+    id("com.google.gms.google-services") // เคลื่อนย้ายไว้ในที่ที่ถูกต้อง
+}
+
+android {
+    namespace = "com.example.project2"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+    compileSdkVersion 34
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // ถ้าใช้ Kotlin
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+
+    defaultConfig {
+        applicationId = "com.example.restaurantreviewapp"
+        minSdk 23 // เปลี่ยนเป็น 23
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*.kotlin_module'
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/*.proto'
+        exclude 'META-INF/*.properties'
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    implementation platform("com.google.firebase:firebase-bom:33.3.0")
+    implementation "com.google.firebase:firebase-analytics-ktx"
+    implementation "com.google.guava:guava:30.1.1-android"
+}

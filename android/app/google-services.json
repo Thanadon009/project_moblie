@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "412174503644",
+    "project_id": "projectmoblie1",
+    "storage_bucket": "projectmoblie1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412174503644:android:ba9eb0494de76a230bae19",
+        "android_client_info": {
+          "package_name": "com.example.restaurantreviewapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHBkY_RfXHmXEZb0b_TQRhUjH2J4f5XUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

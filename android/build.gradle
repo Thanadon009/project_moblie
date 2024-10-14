@@ -1,0 +1,39 @@
+buildscript {
+    ext.kotlin_version = '1.8.22'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.22"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// ตั้งค่าไดเรกทอรีการสร้างโปรเจกต์และโมดูล
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+// กำหนดให้การประเมินผลของโปรเจกต์ขึ้นกับโมดูล :app
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+// งานสำหรับการลบ build directory
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
+// ตั้งค่าคอมไพล์ Java เพื่อลดการแจ้งเตือน deprecated
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:deprecation"
+}

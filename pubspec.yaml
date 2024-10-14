@@ -1,0 +1,41 @@
+name: project2
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  firebase_core: ^2.16.0 # เวอร์ชันล่าสุด
+  firebase_auth: ^4.16.0 # ใช้สำหรับ Authentication
+  cloud_firestore: ^4.12.0 # ใช้สำหรับ Firestore
+  firebase_storage: ^11.3.0 # ใช้สำหรับ Storage
+  firebase_messaging: ^14.9.4
+  image_picker: ^0.8.5+3
+  image_picker_for_web: ^2.2.0
+  file_picker: ^5.0.0
+  http: ^1.2.2
+  intl: ^0.18.1
+  flutter_local_notifications: ^17.2.3
+  permission_handler: ^10.0.0
+  fake_cloud_firestore: ^2.4.0
+  build_runner: ^2.4.13
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  mockito: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/default_profile.jpg
+    - assets/background_gradient.jpg
+    - assets/su-logo_big.png
+    - assets/logo3.png
